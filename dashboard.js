@@ -26,6 +26,8 @@ const renderNav = () => {
         `;
 };
 
+
+
 const renderApp = () => {
     renderNav();
 

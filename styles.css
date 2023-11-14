@@ -42,7 +42,11 @@ div .fa-user{
 /*front-container*/
 
 
-
+#section_one{
+ display:flex;
+ justify-content:center;
+ align-items: center;
+}
 
 
 
