@@ -21,10 +21,19 @@ const renderNav = () => {
             <div class="teachers-container">numbers of teachers</div>
             <div class="classes-container">numbers of classes</div>
         </section>
-        
+
+
+
+
+       <footer id="footer-container">
+            <a a href="#" class="About us">About us</a>
+            <a href="#" class="contact">Contact</a>
+       </footer>
         
         `;
 };
+
+
 
 
 
