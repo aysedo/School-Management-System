@@ -1,5 +1,12 @@
 import {renderApp} from "./dashboard.js"
 
 
-renderApp ();
+export function renderApp (){
+    renderNav();
+    renderContent(getStudent());
+    renderContent(getTeacher());
+    renderContent(getClasses());
+    renderFooter()
+
+};
 

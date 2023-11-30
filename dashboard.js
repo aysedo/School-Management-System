@@ -1,5 +1,6 @@
 const app = document.getElementById("app");
 
+const student=document.querySelector('#student-greeting')
 
 const renderNav = () => {
     app.innerHTML += `
@@ -14,13 +15,9 @@ const renderNav = () => {
             </div>
         </div>
 
-        <h1 id="greeting">Welcome Mirijam</h1>
+        <h1 id="student-greeting">${student.name}</h1>
         
-        <section id="section_one">
-            <div class="students-container">numbers of students</div>
-            <div class="teachers-container">numbers of teachers</div>
-            <div class="classes-container">numbers of classes</div>
-        </section>
+       
 
 
 
