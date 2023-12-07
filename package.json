@@ -1,0 +1,15 @@
+{
+  "name": "school-management-system",
+  "version": "1.0.0",
+  "description": "Checkponint Project",
+  "main": "main.js",
+  "scripts": {
+    "start":"main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hicoders",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-icons": "^1.11.2"
+  }
+}
