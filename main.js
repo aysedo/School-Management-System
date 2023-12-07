@@ -1,33 +1,17 @@
-// app.js
+import { employeesData } from ".studentsComponent.js";
+import { header } from "./components/header.js";
+import { layout } from "./components/layout.js";
+import { render } from "./function.js";
 
-document.addEventListener('DOMContentLoaded', function () {
-    const classList = document.getElementById('classList');
-    const teacherList = document.getElementById('teacherList');
-    const studentList = document.getElementById('studentList');
-
-    // Sample data (replace with your data retrieval logic)
-    const classesData = [
-        { id: 1, name: 'Mathematics' },
-        { id: 2, name: 'Science' },
-        // Add more classes as needed
-    ];
-
-   
+render('#app',header+layout)
 
 
-   
 
- 
 
-   
 
-    function renderApp() {
-        renderClasses();
-        renderTeachers();
-        renderStudents();
-    }
+document.querySelector("#employees-link").addEventListener("click",()=>{render("#content",employeesData.content)})
+document.querySelector("#hr-link").addEventListener("click",()=>{render("#content",employeesData.name)})
+document.querySelector("#settings-link").addEventListener("click",()=>{render("#content","settings")})
 
-    renderApp();
-});
 
 

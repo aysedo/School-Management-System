@@ -1,3 +1,10 @@
+
+
+    const classList = document.getElementById('classList').addEventListener('DOMContentLoaded',function(){
+        console.log("loading")
+    })
+
+
 export function renderClasses() {
     const fragment = document.createDocumentFragment();
     classesData.forEach(classItem => {
