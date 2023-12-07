@@ -9,6 +9,7 @@ render('#app',header+layout)
 
 
 
+
 document.querySelector("#employees-link").addEventListener("click",()=>{render("#content",employeesData.content)})
 document.querySelector("#hr-link").addEventListener("click",()=>{render("#content",employeesData.name)})
 document.querySelector("#settings-link").addEventListener("click",()=>{render("#content","settings")})
