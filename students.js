@@ -1,7 +1,5 @@
-import { app } from "./dashboard.js"
 
-export
-const students = [{
+const studentsData = [{
     name: "Max",
     surName: "Hermann",
     average: " ",

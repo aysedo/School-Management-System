@@ -1,4 +1,13 @@
 
+    
+     const teachersData = [
+        { id: 101, name: 'John Doe' },
+        { id: 102, name: 'Jane Smith' },
+        // Add more teachers as needed
+    ];
+    
+    
+    
     export function renderTeachers() {
         const fragment = document.createDocumentFragment();
         teachersData.forEach(teacher => {
