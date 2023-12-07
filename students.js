@@ -26,8 +26,10 @@ const students = [{
 
 
 
-${students.map((student) =>
-const renderContent = () => {
+  ${students.map((student) =>
+
+
+function renderContent() {
     const studentCArd=document.querySelector('#app')
     studentCArd.innerHTML += `
     <div class="card" style="width: 18rem;">
@@ -41,5 +43,4 @@ const renderContent = () => {
     
     
     
-    
-};
+}
