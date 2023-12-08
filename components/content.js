@@ -2,19 +2,24 @@
 const contentContainer = document.querySelector('#content-container')
 
 
-export function renderContent() {
 
-  contentContainer.innerHTML = `
-  <h1>Welcome Mirijam</h1>
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-  `
+export function renderContent(pPage) {
+  if (pPage === "home") {
+    contentContainer.innerHTML = `
+    `
+
+  }
+
+  else if (pPage === "class") {
+    contentContainer.innerHTML = `classes`
+  }
+
+  else if (pPage === "teacher") {
+    contentContainer.innerHTML = `teachers`
+  }
+  else if (pPage === "student") {
+    contentContainer.innerHTML = `students`
+  }
+
 
 }
