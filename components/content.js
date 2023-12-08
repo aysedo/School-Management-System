@@ -1,3 +1,6 @@
+import { studentsData,teachersData,classesData } from "./components/data"
+
+
 const contentContainer = document.querySelector('#content-container')
 
 
@@ -47,14 +50,7 @@ export function renderContent(pPage) {
   </div>
     </div>
   </div>
-</div>
-    
-
-    
-
-  
-
-    `
+</div> `
 
   }
 
@@ -114,8 +110,33 @@ export function renderContent(pPage) {
   </div>`
   }
   else if (pPage === "student") {
-    contentContainer.innerHTML = `students`
+    contentContainer.innerHTML = `
+    <h1 class="m-5">Students</h1>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+        <div class="card ml-10" style="width: 18rem;">
+        <div class="card-body">
+        
+        <i class="bi bi-pencil-square"></i>
+        <i class="bi bi-trash3"></i>
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Average Grade:5.4
+        </a>
+      </div>
+    </div>
+    </div>
+    <div class="col">
+      <div class="card ml-10" style="width: 18rem;">
+      <div class="card-body">
+      <i class="bi bi-pencil-square"></i>
+      <i class="bi bi-trash3"></i>
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Average Grade: 4.9</a>
+  </div>`
   }
-
-
 }
