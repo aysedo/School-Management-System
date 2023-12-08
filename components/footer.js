@@ -4,7 +4,7 @@ export function renderFooter() {
 
     footer.innerHTML = `
 
-<footer class="navbar navbar-expand-lg bg-body-tertiary fixed-bottom">
+<footer class="navbar navbar-expand-lg bg-body-secondary fixed-bottom">
 <div>
       <ul class="navbar-nav">
         <li class="nav-item">
