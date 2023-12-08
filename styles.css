@@ -1,5 +1,9 @@
-body{
-    padding-bottom:56px;
-
-}
-
+#footer-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Damit das Div die volle Breite einnimmt */
+    background-color: #333; /* Hintergrundfarbe anpassen */
+    color: #fff; /* Textfarbe anpassen */
+    padding: 10px; /* Optional: Innenabstand für den Inhalt des Divs */
+  }
