@@ -7,3 +7,8 @@
     color: #fff; /* Textfarbe anpassen */
     padding: 10px; /* Optional: Innenabstand für den Inhalt des Divs */
   }
+
+
+.card-link{
+    text-decoration: none;
+}
