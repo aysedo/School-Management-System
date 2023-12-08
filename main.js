@@ -1,17 +1,15 @@
-import { studentsData } from ".studentsComponent.js";
+import { studentsData } from "./components./students.js";
 import { header } from "./components/header.js";
-import { render } from "./function.js";
+import { render } from "./components./function.js";
+import { content } from "./content.js";
 
-render('#app',header +layout)
-
-
-
+render('#app',header +content)
 
 
 
-document.querySelector("#employees-link").addEventListener("click",()=>{render("#content",studentsData.content)})
-document.querySelector("#hr-link").addEventListener("click",()=>{render("#content",teachersData.name)})
-document.querySelector("#settings-link").addEventListener("click",()=>{render("#content","settings")})
+
+
+
 
 
 

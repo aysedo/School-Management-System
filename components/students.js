@@ -1,5 +1,5 @@
 
-const studentsData = [{
+export const studentsData = [{
     name: "Max",
     surName: "Hermann",
     average: " ",
@@ -19,6 +19,8 @@ const studentsData = [{
 }
 
 ]
+
+
 
 
 
