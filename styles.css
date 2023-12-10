@@ -3,6 +3,8 @@ body{
     margin:0px;
     font-family: "aria";
 }
+
+
 /*navbar*/
 .navbar{
     height:50px;
@@ -68,6 +70,8 @@ section .teachers-container{
         text-align: center;
         padding-top: 20px;
       }
+
+
 section .classes-container{
         margin: 150px;
         width: 15%;
