@@ -9,6 +9,11 @@
   }
 
 
-.card-link{
+.primary{
     text-decoration: none;
+}
+.bi{
+    display:flex;
+    justify-content:end;
+    
 }

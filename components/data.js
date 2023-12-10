@@ -14,18 +14,35 @@ export const studentsData = [{
     name: "Peter",
     surName: "Pan",
     average: " ",
-    class:"Development"
+    class: "Development"
 }
 ]
 
 
-export const teachersData≠[{
+export const teachersData=[{
     name:"Hannes",
-    lasName: 
-
-
-
-
+    surName: "Bühler",
+    profession: "Javascript Expert",
+},
+{
+    name:"Ali",
+    surName: "Sayar",
+    profession: "AWS Expert",
+},
+{
+    name:"Mehmet",
+    surName: "Dogan",
+    profession: "AWS Expert",
 }
+]
 
+export const classesData=[
+    {
+    class:"Fullstack",
+    teacher: "Hannes Bühler"},
+    
+{
+    class:"Cloud class",
+    teacher: "Ali Sayar",
+}
 ]
