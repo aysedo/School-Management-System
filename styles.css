@@ -1,101 +1,19 @@
-/*Header style*/
-body{
-    margin:0px;
-    font-family: "aria";
-}
-
-
-/*navbar*/
-.navbar{
-    height:50px;
-    width:100%;
-    background-color: gainsboro;
-    position: relative;
-    overflow: hidden;
-}
-
-
-
-/*Buttons*/
-
-.navbar a{
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/*icon*/
-div .fa-user{
-    float:right;
-    color:black;
-    height:50vh;
-   
-}
-
-/*content*/
-
-#greeting{
-    margin:100px;
-}
-
-/*front-container*/
-
-
-#section_one{
- display:flex;
- justify-content:center;
- align-items: center;
-}
-
-
-/* front-container items*/
-
-section .students-container{
-        margin: 150px;
-        width: 15%;
-        height: 100px;
-        border: 2px solid black ;
-        text-align: center;
-        padding-top: 20px;
-      }
-
-section .teachers-container{
-        margin: 150px;
-        width: 15%;
-        height: 100px;
-        border: 2px solid black ;
-        text-align: center;
-        padding-top: 20px;
-      }
-
-
-section .classes-container{
-        margin: 150px;
-        width: 15%;
-        height: 100px;
-        border: 2px solid black ;
-        text-align: center;
-        padding-top: 20px;
-      }    
-
-/* Footer part*/
 #footer-container{
-  position:fixed;
-  bottom: 0;
-  left:0;
-  width:100%;
-  background-color: #333;
-  color: #fff;
-  text-align:start;
-  padding: 10px;
-  background-color: gainsboro;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Damit das Div die volle Breite einnimmt */
+    background-color:darkgray; /* Hintergrundfarbe anpassen */
+    color: #fff; /* Textfarbe anpassen */
+    padding: 10px; /* Optional: Innenabstand für den Inhalt des Divs */
+  }
+
+
+.primary{
+    text-decoration: none;
 }
-  
-#footer-container a{
-  color:black;
-  text-decoration: none;
-  padding:10px;
+.bi{
+    display:flex;
+    justify-content:end;
+    
 }
