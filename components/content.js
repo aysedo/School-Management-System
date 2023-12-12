@@ -123,6 +123,7 @@ export function renderContent(pPage) {
       const teacherSubject = document.querySelector("#teacherSubject").value;
       addNewTeacher(teacherName, teacherSubject);
       document.querySelector('#addTeacherModal').style.display = 'none';
+      renderContent("teacher")
     });
   }
 

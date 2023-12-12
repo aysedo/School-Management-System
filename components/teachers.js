@@ -10,3 +10,7 @@ export function addNewTeacher(name, subject) {
     teachersData.push(newTeacher);
 
 }
+
+export function getTeacherContent(){
+    
+}
