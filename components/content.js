@@ -71,7 +71,7 @@ export function renderContent(pPage) {
                 <i class="bi bi-x-circle"></i>
                 <div class="card-body">
                     <h5 class="card-title">${teacher.name}   ${teacher.surName}</h5>
-                    <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
+                    <p class="card-text">An IT teacher is an education professional specialized in instructing information technology concepts. They possess in-depth knowledge of computer systems, software development, networks, and databases.</p>
                     <a href="#" class="primary m-5">Students</a>
                     <a href="#" class="primary">Class</a>
                 </div>
