@@ -44,5 +44,9 @@ export const classesData=[
 {
     class:"Cloud class",
     teacher: "Ali Sayar",
+},
+{
+    class:"Math class",
+    teacher: "Ali Sayar",
 }
 ]
