@@ -1,14 +1,7 @@
 import { teachersData } from "./data.js"
 import { studentsData } from "./data.js"
 
-
 const contentContainer = document.querySelector('#content-container')
-
-
-
-
-
-
 
 export function renderContent(pPage) {
   if (pPage === "home") {
@@ -95,7 +88,7 @@ export function renderContent(pPage) {
           <i class="bi bi-pencil-square"></i>
           <i class="bi bi-x-circle"></i>
           <div class="card-body">
-              <h5 class="card-title">${teacher.name}</h5>
+              <h5 class="card-title">${teacher.name}   ${teacher.surName}</h5>
               <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
               <a href="#" class="primary m-5">Students</a>
               <a href="#" class="primary">Class</a>
@@ -105,22 +98,36 @@ export function renderContent(pPage) {
     }).join(" ")
   }
   else if (pPage === "student") {
+
     contentContainer.innerHTML = `
     <h1 class="m-5">Students</h1>
     <div class="container text-center">
-      <div class="row">`
-    contentContainer.innerHTML += studentsData.map(student => {
-      return `<div class="col-4">
-      <div class="card">
-          <i class="bi bi-pencil-square"></i>
-          <i class="bi bi-x-circle"></i>
-          <div class="card-body">
-              <h5 class="card-title">${student.name}${student.surName}</h5>
-              <h6>${student.class}</h6>
-              <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
-              <a href="#" class="btn btn-primary">Git</a>
-          </div>
+      <div class="row">
+      ${contentContainer.innerHTML += studentsData.map(student => {
+      return `
+            <div class="col-4">
+              <div class="card">
+                  <i class="bi bi-pencil-square"></i>
+                  <i class="bi bi-x-circle"></i>
+                  <div class="card-body">
+                      <h5 class="card-title">${student.name}  ${student.surName}</h5>
+                      <h6>${student.class}</h6>
+                      <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
+                      <a href="#" id="average-grade">Average Grade:4.9</a>
+                  </div>
+              </div>
+            </div>
+        `
+        }).join(" ")
+      }
       </div>
-  </div>`
-    }).join(" ")
-  }}
+      <div class="row">
+        <div class="col">
+          <button>Add Student</button>
+        </div>
+      </div>
+    </div>`
+  }
+
+
+}
