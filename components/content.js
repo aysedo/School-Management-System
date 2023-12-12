@@ -134,6 +134,10 @@ export function renderContent(pPage) {
         </div>
       </div>
     </div>`
+
+    document.querySelector('#add-students-btn').addEventListener('click',function(){
+      console.log('clicked')
+    })
   }
 
 
