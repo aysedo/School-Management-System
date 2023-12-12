@@ -39,7 +39,8 @@
 }
 
 
-/* add Students content.js*/
-#add-students-btn{
-    margin-top: 10vh;
+
+/*card link*/
+.card-link{
+    text-decoration: none;
 }
