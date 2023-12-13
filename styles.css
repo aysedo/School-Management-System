@@ -1,3 +1,17 @@
+/*dashboard div*/
+
+#div-container{
+    width: 25vw;
+    height: 25vh;
+    border: 1px grey solid;
+    margin: 15px;
+    padding-top: 50px;
+}
+
+
+
+
+
 #footer-container{
     position: fixed;
     bottom: 0;
@@ -16,4 +30,16 @@
     display:flex;
     justify-content:end;
     
+}
+
+/*average grade*/ 
+
+#average-grade{
+    text-decoration: none;
+}
+
+
+/* add Students content.js*/
+#add-students-btn{
+    margin-top: 10vh;
 }
