@@ -1,6 +1,6 @@
 import { teachersData } from "./data.js"
 import { getContentContainer } from "./dom.js"
-import { modalFragment } from "./modal.js";
+import { modalFragmentTeacher } from "./modalTeacher.js";
 
 
 // Funktion zum Hinzufügen eines neuen Lehrers
@@ -16,7 +16,7 @@ export function addNewTeacher(name, surName, profession) {
 
 export function getTeacherContent() {
 
-    const modalHtml = modalFragment();
+    const modalHtml = modalFragmentTeacher();
 
     const contentContainer = getContentContainer();
     contentContainer.innerHTML = `
@@ -27,8 +27,8 @@ export function getTeacherContent() {
         return `
                     <div class="col-4">
                         <div class="card">
-                            <i class="bi bi-pencil-square"></i>
-                            <i class="bi bi-x-circle"></i>
+                            <a href="#" class="card-link" ><i class="bi bi-pencil-square"></i></a>
+                            <a href="#" class="card-link" ><i class="bi bi-x-circle"></i></a>
                             <div class="card-body">
                                 <h5 class="card-title">${teacher.name}   ${teacher.surName}</h5>
                                 <h6 class="card-title">${teacher.profession}</h6>

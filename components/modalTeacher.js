@@ -1,5 +1,5 @@
 
-export function modalFragment() {
+export function modalFragmentTeacher() {
     return `
         <!-- Modal for adding a new teacher -->
         <div class="modal" id="addTeacherModal">

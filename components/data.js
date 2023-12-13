@@ -1,20 +1,22 @@
 export const studentsData = [{
-    name: "Max",
+    firstName: "Max",
     surName: "Hermann",
-    average: " ",
-    class: "Fullstack Class"
+    classes: "Fullstack Class",
+    average: "4.9 "
 },
 {
-    name: "Alice",
+    firstName: "Alice",
     surName: "Müller",
-    average: " ",
-    class: "Cloud Class"
+    classes: "Cloud Class",
+    average: "5 "
+    
 },
 {
-    name: "Peter",
+    firstName: "Peter",
     surName: "Pan",
-    average: " ",
-    class: "Development"
+    classes: "Development",
+    average: "3.5"
+    
 }
 ]
 

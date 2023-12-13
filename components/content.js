@@ -1,6 +1,7 @@
 import { teachersData, studentsData, classesData } from "./data.js"
 import { addNewTeacher, getTeacherContent } from "./teachers.js"
 import { getContentContainer } from "./dom.js"
+import { getStudentContent } from "./students.js";
 
 
 
@@ -76,32 +77,18 @@ export function renderContent(pPage) {
     });
     
   } else if (pPage === "student") {
-    contentContainer.innerHTML = `
-        <h1 class="m-5">Students</h1>
-        <div class="container text-center">
-          <div class="row">${studentsData.map(student => {
-      return `
-                    <div class="col-4">
-                      <div class="card">
-                          <i class="bi bi-pencil-square"></i>
-                          <i class="bi bi-x-circle"></i>
-                          <div class="card-body">
-                              <h5 class="card-title">${student.name}  ${student.surName}</h5>
-                              <h6>${student.class}</h6>
-                              <p class="card-text">A cloud class focuses on teaching concepts related to cloud computing, covering topics such as virtualization, cloud infrastructure, deployment models, and cloud services.</p>
-                              <a href="#" id="average-grade">Average Grade:4.9</a>
-                          </div>
-                      </div>
-                    </div>
-                `
-    }).join(" ")
-      }
-      </div>
-        <div class="row">
-          <div class="col">
-            <button class="m-5">Add new Student</button>
-          </div>
-        </div>
-      </div>`
+    getStudentContent()
+    document.querySelector("#addStudentForm").addEventListener('submit', function (event) {
+      event.preventDefault();
+      const studentName = document.querySelector("#studentName").value;
+      const studentSurname = document.querySelector("#studentSurname").value;
+      const studentAverage = document.querySelector("#studentAverage").value;
+      const studentClass = document.querySelector("#studentClass").value;
+      addNewStudent(studentName, studentSurname, studentAverage, studentClass);
+      const addStudentModal = document.querySelector('#addStudentModal');
+      const modal = bootstrap.Modal.getInstance(addStudentModal);
+      modal.hide();
+      renderContent("student")
+    });
   }
 }
