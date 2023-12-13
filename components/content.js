@@ -1,10 +1,15 @@
-import { teachersData } from "./data.js"
-import { studentsData } from "./data.js"
-import { classesData } from "./data.js"
+import { teachersData, studentsData, classesData } from "./data.js"
+import { addNewTeacher, getTeacherContent } from "./teachers.js"
+import { getContentContainer } from "./dom.js"
+import { addNewStudent, getStudentContent } from "./students.js";
 
-const contentContainer = document.querySelector('#content-container')
+
+
 
 export function renderContent(pPage) {
+
+  const contentContainer = getContentContainer();
+
   if (pPage === "home") {
     contentContainer.innerHTML = `
         <h1 class="m-5">Welcome Mirijam</h1>
@@ -25,102 +30,66 @@ export function renderContent(pPage) {
           </div>
         </div>
     `
-   }else if (pPage === "class") {
-      contentContainer.innerHTML = `
+  } else if (pPage === "class") {
+    contentContainer.innerHTML = `
     <h1 class="m-5">Classes</h1>
     <div class="container text-center">
       <div class="row">
       ${classesData.map(classcontent => {
-        return `
+      return `
             <div class="col-4">
               <div class="card">
-                  <i class="bi bi-pencil-square"></i>
-                  <i class="bi bi-x-circle"></i>
+                  <a href="#" class="card-link" ><i class="bi bi-pencil-square"></i></a>
+                  <a href="#" class="card-link" ><i class="bi bi-x-circle"></i></a>
                   <div class="card-body">
                       <h5 class="card-title">${classcontent.class}</h5>
                       <h6>${classcontent.teacher}</h6>
-                      <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
-                       <a href="#" class="card-link">Students</a>
+                      <p class="card-text">The classes in an IT school encompass various levels from beginners to advanced.</p>
+                       <a href="#" class="card-link" >Students</a>
                        <a href="#" class="card-link">Teachers</a>
                   </div>
               </div>
             </div>
         `
-      }).join(" ")
-        }
+    }).join(" ")
+      }
       </div>
-      <div class="row">
-        <div class="col">
-          <button id="add-students-btn">Add Class</button>
+        <div class="row">
+          <div class="col">
+            <button class="m-5">Add new Class</button>
+          </div>
         </div>
-      </div>
-    </div
+      </div
       `
-    }
+  } else if (pPage === "teacher") {
+    getTeacherContent()
+    // Event-Listener für das Einreichen des Formulars
+    document.querySelector("#addTeacherForm").addEventListener('submit', function (event) {
+      event.preventDefault();
+      const teacherName = document.querySelector("#teacherName").value;
+      const teacherSurname = document.querySelector("#teacherSurname").value;
+      const teacherProfession = document.querySelector("#teacherProfession").value;
+      addNewTeacher(teacherName, teacherSurname, teacherProfession);
+      const addTeacherModal = document.querySelector('#addTeacherModal');
+      const modal = bootstrap.Modal.getInstance(addTeacherModal);
+      modal.hide();
+      renderContent("teacher")
+    });
 
-    else if (pPage === "teacher") {
-      contentContainer.innerHTML = `
-    <h1 class="m-5">Teachers</h1>
-    <div class="container text-center">
-      <div class="row">
-      ${teachersData.map(teacher => {
-        return `
-          <div class="col-4">
-            <div class="card">
-                <i class="bi bi-pencil-square"></i>
-                <i class="bi bi-x-circle"></i>
-                <div class="card-body">
-                    <h5 class="card-title">${teacher.name}   ${teacher.surName}</h5>
-                    <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
-                    <a href="#" class="primary m-5">Students</a>
-                    <a href="#" class="primary">Class</a>
-                </div>
-              </div>
-          </div>`
-      }).join(" ")
-        }
-      </div>
-    </div>  
-      `
-    }
-
-    else if (pPage === "student") {
-
-      contentContainer.innerHTML = `
-    <h1 class="m-5">Students</h1>
-    <div class="container text-center">
-      <div class="row">${studentsData.map(student => {
-        return `
-                <div class="col-4">
-                  <div class="card">
-                      <i class="bi bi-pencil-square"></i>
-                      <i class="bi bi-x-circle"></i>
-                      <div class="card-body">
-                          <h5 class="card-title">${student.name}  ${student.surName}</h5>
-                          <h6>${student.class}</h6>
-                          <p class="card-text">Bazı hızlı örnek metinler kartın içeriğini oluşturmak için buraya yerleştirilebilir.</p>
-                          <a href="#" id="average-grade">Average Grade:4.9</a>
-                      </div>
-                  </div>
-                </div>
-            `
-      }).join(" ")
-
-
-
-        }
-      </div>
-      <div class="row">
-        <div class="col">
-          <button id="add-students-btn">Add Student</button>
-        </div>
-      </div>
-    </div>`
-
-      document.querySelector('#add-students-btn').addEventListener('click', function () {
-        console.log('clicked')
-      })
-    }
-
-
+  } else if (pPage === "student") {
+    getStudentContent()
+    document.querySelector("#addStudentForm").addEventListener('submit', function (event) {
+      event.preventDefault();
+      const studentFirstName = document.querySelector("#studentFirstName").value;
+      const studentSurname = document.querySelector("#studentSurname").value;
+      const studentClass = document.querySelector("#studentClass").value;
+      const studentAverage = document.querySelector("#studentAverage").value;
+      console.log('sa', studentAverage)
+      addNewStudent(studentFirstName, studentSurname, studentClass, studentAverage);
+      const addStudentModal = document.querySelector('#addStudentModal');
+      const modal = bootstrap.Modal.getInstance(addStudentModal);
+      modal.hide();
+      renderContent("student")
+    });
   }
+}
