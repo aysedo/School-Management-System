@@ -2,13 +2,13 @@ export const studentsData = [{
     firstName: "Max",
     surName: "Hermann",
     classes: "Fullstack Class",
-    average: "4.9 "
+    average: "4.9"
 },
 {
     firstName: "Alice",
     surName: "Müller",
     classes: "Cloud Class",
-    average: "5 "
+    average: "5"
     
 },
 {

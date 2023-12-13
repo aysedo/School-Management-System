@@ -6,12 +6,13 @@ import { modalFragmentStudent } from "./modalStudent.js";
 
 
 // Funktion zum Hinzufügen eines neuen Schülers
-export function addNewTeacher(firstName, surName, average, classes) {
+export function addNewStudent(firstName, surName, classes, average) {
     const newStudent = {
-        name: firstName,
+        firstName: firstName,
         surName: surName,
-        average: average,
-        classes: classes
+        classes: classes,
+        average: average
+        
     };
     studentsData.push(newStudent);
 }
@@ -36,7 +37,7 @@ export function getStudentContent() {
                               <h5 class="card-title">${student.firstName}  ${student.surName}</h5>
                               <h6>${student.classes}</h6>
                               <p class="card-text">A cloud class focuses on teaching concepts related to cloud computing, covering topics such as virtualization, cloud infrastructure, deployment models, and cloud services.</p>
-                              <a href="#" id="average-grade">Average Grade: ${student.average}</a>
+                              <a href="#" id="average">Average Grade: ${student.average}</a>
                           </div>
                       </div>
                     </div>

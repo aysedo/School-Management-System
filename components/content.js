@@ -1,7 +1,7 @@
 import { teachersData, studentsData, classesData } from "./data.js"
 import { addNewTeacher, getTeacherContent } from "./teachers.js"
 import { getContentContainer } from "./dom.js"
-import { getStudentContent } from "./students.js";
+import { addNewStudent, getStudentContent } from "./students.js";
 
 
 
@@ -75,16 +75,17 @@ export function renderContent(pPage) {
       modal.hide();
       renderContent("teacher")
     });
-    
+
   } else if (pPage === "student") {
     getStudentContent()
     document.querySelector("#addStudentForm").addEventListener('submit', function (event) {
       event.preventDefault();
-      const studentName = document.querySelector("#studentName").value;
+      const studentFirstName = document.querySelector("#studentFirstName").value;
       const studentSurname = document.querySelector("#studentSurname").value;
-      const studentAverage = document.querySelector("#studentAverage").value;
       const studentClass = document.querySelector("#studentClass").value;
-      addNewStudent(studentName, studentSurname, studentAverage, studentClass);
+      const studentAverage = document.querySelector("#studentAverage").value;
+      console.log('sa', studentAverage)
+      addNewStudent(studentFirstName, studentSurname, studentClass, studentAverage);
       const addStudentModal = document.querySelector('#addStudentModal');
       const modal = bootstrap.Modal.getInstance(addStudentModal);
       modal.hide();

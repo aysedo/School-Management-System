@@ -13,14 +13,14 @@ export function modalFragmentStudent() {
                     <div class="modal-body">
                         <!-- Form for adding a student -->
                         <form id="addStudentForm">
-                            <label for="studentName">Name:</label>
-                            <input type="text" id="studentName" class="form-control" required>
+                            <label for="studentFirstName">Firstname:</label>
+                            <input type="text" id="studentFirstName" class="form-control" required>
                             <label for="studentSurname">Surname:</label>
                             <input type="text" id="studentSurname" class="form-control" required>
                             <label for="studentClass">Class:</label>
                             <input type="text" id="studentClass" class="form-control" required>
                             <label for="studentAverage">Average:</label>
-                            <input type="text" id="average" class="form-control" required>
+                            <input type="text" id="studentAverage" class="form-control" required>
                             <button class="btn btn-success mt-3">Add Student</button>
                         </form>
                     </div>
