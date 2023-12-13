@@ -40,15 +40,15 @@ export const teachersData=[{
 
 export const classesData=[
     {
-    class:"Fullstack",
+    className:"Fullstack",
     teacher: "Hannes Bühler"},
     
 {
-    class:"Cloud class",
+    className:"Cloud class",
     teacher: "Ali Sayar",
 },
 {
-    class:"Math class",
+    className:"Math class",
     teacher: "Ali Sayar",
 }
 ]
