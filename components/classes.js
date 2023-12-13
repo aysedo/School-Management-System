@@ -42,7 +42,7 @@ export function getClassContent() {
         </div>
         <div class="row">
             <div class="col">
-                <button class="m-5" data-bs-toggle="modal" data-bs-target="#addTeacherModal">Add new Teacher</button>
+                <button class="m-5" data-bs-toggle="modal" data-bs-target="#addClassModal">Add new Class</button>
             </div>
         </div>
     </div>
