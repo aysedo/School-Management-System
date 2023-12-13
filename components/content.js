@@ -1,9 +1,11 @@
 import { teachersData } from "./data.js"
 import { studentsData } from "./data.js"
 import { classesData } from "./data.js"
-import { addNewTeacher,getTeacherContent } from "./teachers.js"
+import { addNewTeacher} from "./teachers.js"
+import { getTeacherContent} from "./teachers.js"
+import { contentContainer } from "./dom.js"
 
-const contentContainer = document.querySelector('#content-container')
+
 
 export function renderContent(pPage) {
   if (pPage === "home") {
@@ -57,23 +59,21 @@ export function renderContent(pPage) {
         </div>
       </div
       `
-  }
-
-  else if (pPage === "teacher") {
+  } else if (pPage === "teacher") {
     getTeacherContent()
-   
-
-
     // Event-Listener für das Einreichen des Formulars
     document.querySelector("#addTeacherForm").addEventListener('submit', function (event) {
       event.preventDefault();
       const teacherName = document.querySelector("#teacherName").value;
-      const teacherSubject = document.querySelector("#teacherSubject").value;
-      addNewTeacher(teacherName, teacherSubject);
-      document.querySelector('#addTeacherModal').style.display = 'none';
+      const teacherSurname = document.querySelector("#teacherSurname").value;
+      const teacherProfession= document.querySelector("#teacherProfession").value;
+      addNewTeacher(teacherName, teacherSurname,teacherProfession);
+      const addTeacherModal = document.querySelector('#addTeacherModal');
+      const modal = bootstrap.Modal.getInstance(addTeacherModal);
+      modal.hide();
       renderContent("teacher")
     });
-  }else if (pPage === "student") {
+  } else if (pPage === "student") {
     contentContainer.innerHTML = `
         <h1 class="m-5">Students</h1>
         <div class="container text-center">
@@ -93,9 +93,6 @@ export function renderContent(pPage) {
                     </div>
                 `
     }).join(" ")
-
-
-
       }
       </div>
         <div class="row">
@@ -105,6 +102,4 @@ export function renderContent(pPage) {
         </div>
       </div>`
   }
-
-
 }
