@@ -4,6 +4,7 @@ import { classesData } from "./data.js"
 import { addNewTeacher} from "./teachers.js"
 import { getTeacherContent} from "./teachers.js"
 import { contentContainer } from "./dom.js"
+import { modal } from "./modal.js"
 
 
 
@@ -78,7 +79,7 @@ export function renderContent(pPage) {
         <h1 class="m-5">Students</h1>
         <div class="container text-center">
           <div class="row">${studentsData.map(student => {
-      return `
+            return `
                     <div class="col-4">
                       <div class="card">
                           <i class="bi bi-pencil-square"></i>
