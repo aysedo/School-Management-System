@@ -2,7 +2,7 @@ import { teachersData, studentsData, classesData } from "./data.js"
 import { addNewTeacher, getTeacherContent } from "./teachers.js"
 import { getContentContainer } from "./dom.js"
 import { addNewStudent, getStudentContent } from "./students.js";
-
+import { addNewClass, getClassContent } from "./classes.js";
 
 
 
@@ -31,36 +31,19 @@ export function renderContent(pPage) {
         </div>
     `
   } else if (pPage === "class") {
-    contentContainer.innerHTML = `
-    <h1 class="m-5">Classes</h1>
-    <div class="container text-center">
-      <div class="row">
-      ${classesData.map(classcontent => {
-      return `
-            <div class="col-4">
-              <div class="card">
-                  <a href="#" class="card-link" ><i class="bi bi-pencil-square"></i></a>
-                  <a href="#" class="card-link" ><i class="bi bi-x-circle"></i></a>
-                  <div class="card-body">
-                      <h5 class="card-title">${classcontent.class}</h5>
-                      <h6>${classcontent.teacher}</h6>
-                      <p class="card-text">The classes in an IT school encompass various levels from beginners to advanced.</p>
-                       <a href="#" class="card-link" >Students</a>
-                       <a href="#" class="card-link">Teachers</a>
-                  </div>
-              </div>
-            </div>
-        `
-    }).join(" ")
-      }
-      </div>
-        <div class="row">
-          <div class="col">
-            <button class="m-5">Add new Class</button>
-          </div>
-        </div>
-      </div
-      `
+    getClassContent()
+    // Event-Listener für das Einreichen des Formulars
+    document.querySelector("#addClassForm").addEventListener('submit', function (event) {
+      event.preventDefault();
+      const className = document.querySelector("#className").value;
+      const classTeacher = document.querySelector("#classTeacher").value;
+      addNewClass(className, classTeacher);
+      const addClassModal = document.querySelector('#addClassModal');
+      const modal = bootstrap.Modal.getInstance(addClassModal);
+      modal.hide();
+      renderContent("class")
+    });
+      
   } else if (pPage === "teacher") {
     getTeacherContent()
     // Event-Listener für das Einreichen des Formulars
