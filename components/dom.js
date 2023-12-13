@@ -1,2 +1,9 @@
 
-export const contentContainer = document.querySelector('#content-container')
+
+export function getContentContainer() {
+    return document.querySelector("#content-container");
+}
+
+
+
+

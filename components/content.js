@@ -1,14 +1,14 @@
-import { teachersData } from "./data.js"
-import { studentsData } from "./data.js"
-import { classesData } from "./data.js"
-import { addNewTeacher} from "./teachers.js"
-import { getTeacherContent} from "./teachers.js"
-import { contentContainer } from "./dom.js"
-import { modal } from "./modal.js"
+import { teachersData, studentsData, classesData } from "./data.js"
+import { addNewTeacher, getTeacherContent } from "./teachers.js"
+import { getContentContainer } from "./dom.js"
+
 
 
 
 export function renderContent(pPage) {
+
+  const contentContainer = getContentContainer();
+
   if (pPage === "home") {
     contentContainer.innerHTML = `
         <h1 class="m-5">Welcome Mirijam</h1>
@@ -67,19 +67,20 @@ export function renderContent(pPage) {
       event.preventDefault();
       const teacherName = document.querySelector("#teacherName").value;
       const teacherSurname = document.querySelector("#teacherSurname").value;
-      const teacherProfession= document.querySelector("#teacherProfession").value;
-      addNewTeacher(teacherName, teacherSurname,teacherProfession);
+      const teacherProfession = document.querySelector("#teacherProfession").value;
+      addNewTeacher(teacherName, teacherSurname, teacherProfession);
       const addTeacherModal = document.querySelector('#addTeacherModal');
       const modal = bootstrap.Modal.getInstance(addTeacherModal);
       modal.hide();
       renderContent("teacher")
     });
+    
   } else if (pPage === "student") {
     contentContainer.innerHTML = `
         <h1 class="m-5">Students</h1>
         <div class="container text-center">
           <div class="row">${studentsData.map(student => {
-            return `
+      return `
                     <div class="col-4">
                       <div class="card">
                           <i class="bi bi-pencil-square"></i>
