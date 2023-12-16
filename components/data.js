@@ -22,16 +22,19 @@ export const studentsData = [{
 
 
 export const teachersData=[{
+    id="1",
     name:"Hannes",
     surName: "Bühler",
     profession: "Javascript Expert",
 },
 {
+    id="2",
     name:"Ali",
     surName: "Sayar",
     profession: "AWS Expert",
 },
 {
+    id="3",
     name:"Mehmet",
     surName: "Dogan",
     profession: "AWS Expert",
